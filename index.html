@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador de Entidades BIM</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="assets/nabe.ico">
+  <meta name="theme-color" content="#2f5d4a">
+</head>
+<body>
+
+  <!-- Boton flotante para abrir historial en celular -->
+  <button id="toggleHistorial" class="toggle-historial" aria-label="Ver historial">
+    <span class="historial-count" id="contadorHistorial">0</span>
+    📋
+  </button>
+
+  <!-- Panel de Historial -->
+  <div id="panelHistorial" class="panel-historial">
+    <div class="panel-header">
+      <h3>Historial</h3>
+      <button id="cerrarHistorial" class="cerrar-historial" aria-label="Cerrar historial">×</button>
+    </div>
+    <ul id="listaHistorial"></ul>
+    <div class="total-acumulado">
+      Total: <strong id="totalAcumulado">$ 0</strong>
+    </div>
+  </div>
+
+  <!-- Overlay para cerrar el panel al hacer clic fuera -->
+  <div id="overlay" class="overlay"></div>
+
+  <div id="formCliente" class="pantalla pantalla-activa">
+    <form id="clienteForm" class="form-cliente">
+      <div class="titulo-con-logo">
+        <h1>Cotizador de Creación de Entidades Nabe</h1>
+        <img src="assets/nabe.png" alt="Logo Nabe" class="logo-titulo">
+      </div>
+
+      <p>Antes de comenzar, necesitamos tus datos.</p>
+
+      <label>Nombre completo *</label>
+      <input type="text" id="clienteNombre" required>
+
+      <label>Empresa</label>
+      <input type="text" id="clienteEmpresa">
+
+      <label>Email *</label>
+      <input type="email" id="clienteEmail" required>
+
+      <label>Teléfono</label>
+      <input type="text" id="clienteTelefono">
+
+      <button type="button" id="btnContinuar">Continuar</button>
+    </form>
+  </div>
+
+  <div id="panelTooltip" class="panel-tooltip">
+    <button id="cerrarTooltip" aria-label="Cerrar tooltip">✕</button>
+    <div id="contenidoTooltip"></div>
+  </div>
+
+  <div id="formTecnico" class="pantalla">
+
+    <form id="cotizadorForm">
+      <h1>Cotizador de Creación de Entidades</h1>
+      <p>Complete el formulario para cotizar entidades BIM.</p>
+
+      <!-- P1 -->
+      <label>
+        1. Identificador de la entidad *
+      </label>
+      <input type="text" name="identificador" required>
+
+      <!-- P2 -->
+      <label>
+        2. ¿La entidad es nativa de Revit?
+        <span class="icono-info" data-tooltip="software">ⓘ</span>
+      </label>
+
+      <select name="software" id="software" required>
+        <option value="">Seleccione</option>
+        <option value="nativo">Entidad nativa de Revit</option>
+        <option value="externo">Necesita software externo</option>
+      </select>
+
+      <!-- P3 -->
+      <label>
+        3. ¿La entidad debe ser paramétrica?
+        <span class="icono-info" data-tooltip="parametrica">ⓘ</span>
+      </label>
+      <select name="parametrica" id="parametrica">
+        <option value="no">No</option>
+        <option value="basica">Parámetros básicos</option>
+        <option value="compleja">Parámetros complejos</option>
+      </select>
+
+      <!-- P4 -->
+      <label>
+        4. Categoría
+        <span class="icono-info" data-tooltip="categoria">ⓘ</span>
+      </label>
+      <select name="categoria" id="categoria">
+        <option>Mobiliario</option>
+        <option>Mueble de obra</option>
+        <option>Aparato eléctrico</option>
+        <option>Aparato sanitario</option>
+        <option>Luminaria</option>
+        <option>Puerta</option>
+        <option>Ventana</option>
+        <option>General</option>
+      </select>
+
+      <!-- P5 -->
+      <label>
+        5. Nivel de detalle (LOD)
+        <span class="icono-info" data-tooltip="lod">ⓘ</span>
+      </label>
+      <select name="lod" id="lod">
+        <option>LOD 100</option>
+        <option>LOD 200</option>
+        <option>LOD 300</option>
+        <option>LOD 400</option>
+      </select>
+
+      <!-- P6 -->
+      <label>
+        6. ¿Requiere simbología 2D adicional?
+        <span class="icono-info" data-tooltip="simbologia">ⓘ</span>
+      </label>
+      <select name="simbolo2d" id="simbolo2d">
+        <option>No</option>
+        <option>Sí</option>
+      </select>
+
+      <!-- P7 -->
+      <label>
+        7. ¿Tiene conexiones MEP?
+        <span class="icono-info" data-tooltip="mep">ⓘ</span>
+      </label>
+      <select name="mep" id="mep">
+        <option>No</option>
+        <option>Sí</option>
+      </select>
+
+      <!-- P8 -->
+      <label>
+        8. ¿Requiere configuración de tipos?
+        <span class="icono-info" data-tooltip="tipos">ⓘ</span>
+      </label>
+      <select name="tipos" id="tipos">
+        <option>No</option>
+        <option>Sí</option>
+      </select>
+
+      <!-- P9 -->
+      <label>
+        9. Cantidad de entidades
+        <span class="icono-info" data-tooltip="cantidad">ⓘ</span>
+      </label>
+      <input type="number" name="cantidad" min="1" value="1">
+
+      <label>Total estimado</label>
+      <input type="text" id="totalCotizacion" readonly>
+
+      <button type="submit">Enviar cotización</button>
+    </form>
+  </div>
+
+
+  <div id="postEnvio" style="display:none; text-align:center;">
+    <h2>Cotización enviada</h2>
+    <p>¿Deseas agregar otra entidad o finalizar?</p>
+
+    <div class="post-buttons">
+      <button type="button" id="otraEntidad">Agregar otra entidad</button>
+      <button type="button" id="finalizar">Finalizar</button>
+    </div>
+  </div>
+
+  <div id="mensajeFinal" style="display:none; text-align:center;">
+    <h2>¡Gracias!</h2>
+    <p>Hemos recibido tu solicitud de cotización.<br>
+    Nos pondremos en contacto contigo pronto.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
