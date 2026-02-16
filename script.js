@@ -220,6 +220,7 @@ document.getElementById("finalizar").addEventListener("click", () => {
 function actualizarHistorial() {
   const lista = document.getElementById("listaHistorial");
   const totalAcum = document.getElementById("totalAcumulado");
+  const historialMovil = document.getElementById("historialMovil");
   
   lista.innerHTML = "";
 
@@ -229,6 +230,12 @@ function actualizarHistorial() {
     li.innerHTML = `
       <strong>${item.entidad}</strong><br>
       $ ${item.total.toLocaleString("es-CO")}
+      <p class="detalle-horas">
+        Horas por unidad: ${item.horasUnidad}
+      </p>
+      <p class="detalle-horas">
+        Horas totales: ${item.horasTotales}
+      </p>
       <div>
         <button type="button" onclick="eliminarEntidad(${index})">Eliminar</button>
       </div>
@@ -241,6 +248,37 @@ function actualizarHistorial() {
   
   // Actualizar contador del botón flotante
   contadorHistorial.textContent = historial.length;
+
+  if (historialMovil) {
+  historialMovil.innerHTML = "";
+
+  historial.forEach(entidad => {
+
+    const card = document.createElement("div");
+    card.classList.add("item-historial");
+
+    card.innerHTML = `
+      <div class="historial-card">
+        <strong>${entidad.entidad}</strong>
+        <p>$ ${entidad.total.toLocaleString("es-CO")}</p>
+      </div>
+    `;
+
+    historialMovil.appendChild(card);
+  });
+
+  const horasTotalesGlobal = historial.reduce((acc, e) => {
+  return acc + (e.horasTotales || 0);
+  }, 0);
+
+  historialMovil.innerHTML += `
+    <div class="total-acumulado-movil">
+      <p><strong>Total:</strong> $ ${totalGeneral.toLocaleString("es-CO")}</p>
+      <p><strong>Horas Totales Aproximadas:</strong> ${horasTotalesGlobal}</p>
+    </div>
+  `;
+
+  }
 }
 function eliminarEntidad(index) {
   totalGeneral -= historial[index].total;
@@ -415,3 +453,19 @@ document.querySelectorAll(".icono-info").forEach(icono => {
 document.getElementById("cerrarTooltip").addEventListener("click", () => {
   document.getElementById("panelTooltip").classList.remove("activo");
 });
+
+const panelTooltip = document.getElementById("panelTooltip");
+
+document.addEventListener("click", function (e) {
+
+  const clickDentroPanel = panelTooltip.contains(e.target);
+  const clickEnBotonInfo = e.target.closest(".icono-info"); 
+  // cambia ".icono-info" por la clase real de tu botón "i"
+
+  if (!clickDentroPanel && !clickEnBotonInfo) {
+    panelTooltip.classList.remove("activo"); 
+    // usa la clase que tú utilizas para mostrarlo
+  }
+
+});
+
