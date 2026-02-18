@@ -501,3 +501,44 @@ select {
   margin: 2px 0;
 }
 
+.detalle-entidad {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.detalle-entidad p {
+  margin: 2px 0;
+}
+
+
+.clausula-final {
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+}
+
+.texto-clausula {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes-sociales a {
+  font-size: 1.4rem;
+  color: #20e3d8;
+  transition: 0.2s ease;
+}
+
+.redes-sociales a:hover {
+  transform: scale(1.15);
+}
+
+

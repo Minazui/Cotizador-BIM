@@ -6,6 +6,7 @@
   <title>Cotizador de Entidades BIM</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="assets/nabe.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="theme-color" content="#2f5d4a">
 </head>
 <body>
@@ -164,7 +165,7 @@
       <label>Total estimado</label>
       <input type="text" id="totalCotizacion" readonly>
 
-      <button type="submit">Enviar cotización</button>
+      <button type="submit">Agregar Producto</button>
     </form>
   </div>
 
@@ -188,6 +189,28 @@
     <p>Hemos recibido tu solicitud de cotización.<br>
     Nos pondremos en contacto contigo pronto.</p>
   </div>
+  <div id="clausulaFinal" class="clausula-final" style="display:none;">
+  
+  <p class="texto-clausula">
+    La presente cotización tiene una vigencia de <strong>15 días calendario</strong> 
+    a partir de la fecha de emisión. 
+    Transcurrido este plazo, los valores podrán estar sujetos a revisión 
+    según condiciones técnicas y alcance definitivo del proyecto.
+  </p>
+
+  <div class="redes-sociales">
+    <a href="https://instagram.com/TU_USUARIO" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://twitter.com/TU_USUARIO" target="_blank">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+    <a href="https://wa.me/57XXXXXXXXXX" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+  </div>
+
 
   <script src="script.js"></script>
 </body>

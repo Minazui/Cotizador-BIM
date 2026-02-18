@@ -189,17 +189,17 @@ document.getElementById("finalizar").addEventListener("click", () => {
   formData.append("entidades", JSON.stringify(historial));
   formData.append("totalGeneral", totalGeneral);
 
-  console.log("Datos cliente:", datosCliente);
-  console.log("Historial:", historial);
-  console.log("Total general:", totalGeneral);
-  console.log("Total horas:", totalHoras);
-  console.log("Historial:", historial);
-  console.log("total:", total);
-  console.log("cantidad:", resultado.cantidad);
-  console.log(historial[0]);
+  //console.log("Datos cliente:", datosCliente);
+  //console.log("Historial:", historial);
+  //console.log("Total general:", totalGeneral);
+  //console.log("Total horas:", totalHoras);
+  //console.log("Historial:", historial);
+  //console.log("total:", total);
+  //console.log("cantidad:", resultado.cantidad);
+  //console.log(historial[0]);
 
 
-  const captchaToken = grecaptcha.getResponse();
+  //const captchaToken = grecaptcha.getResponse();
 
   if (!captchaToken) {
     alert("Verifica que no eres un robot.");
@@ -219,6 +219,7 @@ document.getElementById("finalizar").addEventListener("click", () => {
   .then(() => {
     document.getElementById("postEnvio").style.display = "none";
     document.getElementById("mensajeFinal").style.display = "block";
+    document.getElementById("clausulaFinal").style.display = "block";
   })
   .catch(err => {
     console.error("Error enviando:", err);
@@ -245,10 +246,10 @@ function actualizarHistorial() {
       <strong>${item.entidad}</strong><br>
       $ ${item.total.toLocaleString("es-CO")}
       <p class="detalle-horas">
-        Horas por unidad: ${item.horasUnidad}
+        Horas por unidad aprox: ${item.horasUnidad}
       </p>
       <p class="detalle-horas">
-        Horas totales: ${item.horasTotales}
+        Horas de trabajo aprox: ${item.horasTotales}
       </p>
       <div>
         <button type="button" onclick="eliminarEntidad(${index})">Eliminar</button>
@@ -274,9 +275,16 @@ function actualizarHistorial() {
     card.innerHTML = `
       <div class="historial-card">
         <strong>${entidad.entidad}</strong>
+        
         <p>$ ${entidad.total.toLocaleString("es-CO")}</p>
+        
+        <div class="detalle-entidad">
+          <p>Cantidad: ${entidad.cantidad} unidades.</p>
+          <p>Horas por unidad: ${entidad.horasUnidad}</p>
+          <p>Horas totales: ${entidad.horasTotales}</p>
+        </div>
       </div>
-    `;
+      `;
 
     historialMovil.appendChild(card);
   });
@@ -288,7 +296,7 @@ function actualizarHistorial() {
   historialMovil.innerHTML += `
     <div class="total-acumulado-movil">
       <p><strong>Total:</strong> $ ${totalGeneral.toLocaleString("es-CO")}</p>
-      <p><strong>Horas Totales Aproximadas:</strong> ${horasTotalesGlobal}</p>
+      <p><strong>Horas de trabajo Aproximadas:</strong> ${horasTotalesGlobal}</p>
     </div>
   `;
 
