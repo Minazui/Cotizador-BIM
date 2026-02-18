@@ -199,8 +199,19 @@ document.getElementById("finalizar").addEventListener("click", () => {
   console.log(historial[0]);
 
 
+  const captchaToken = grecaptcha.getResponse();
 
-  fetch("https://script.google.com/macros/s/AKfycbyAveNik_zKNr2XbKrquHdfpn99uBXc2ITtv24Xao80kqIxYDJJCI4E9VFADi1GHZq0/exec", {
+  if (!captchaToken) {
+    alert("Verifica que no eres un robot.");
+    return;
+  }
+
+  formData.append("captcha", captchaToken);
+
+
+
+
+  fetch("https://script.google.com/macros/s/AKfycbySxcvhP32oiKSdcehLslXySebRUShMceShAvrDBmw2uyykCJhsyqpF4q5BgS_OHMDBDw/exec", {
     method: "POST",
     body: formData
   })
@@ -212,6 +223,9 @@ document.getElementById("finalizar").addEventListener("click", () => {
   .catch(err => {
     console.error("Error enviando:", err);
   });
+
+  grecaptcha.reset();
+
 
 });
 
