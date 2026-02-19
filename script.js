@@ -199,7 +199,7 @@ document.getElementById("finalizar").addEventListener("click", () => {
   //console.log(historial[0]);
 
 
-  //const captchaToken = grecaptcha.getResponse();
+  const captchaToken = grecaptcha.getResponse();
 
   if (!captchaToken) {
     alert("Verifica que no eres un robot.");
@@ -208,6 +208,7 @@ document.getElementById("finalizar").addEventListener("click", () => {
 
   formData.append("captcha", captchaToken);
 
+  document.getElementById("finalizar").disabled = true;
 
 
 
@@ -224,7 +225,7 @@ document.getElementById("finalizar").addEventListener("click", () => {
   .catch(err => {
     console.error("Error enviando:", err);
   });
-
+  document.getElementById("finalizar").disabled = false;
   grecaptcha.reset();
 
 
@@ -482,11 +483,9 @@ document.addEventListener("click", function (e) {
 
   const clickDentroPanel = panelTooltip.contains(e.target);
   const clickEnBotonInfo = e.target.closest(".icono-info"); 
-  // cambia ".icono-info" por la clase real de tu botón "i"
 
   if (!clickDentroPanel && !clickEnBotonInfo) {
     panelTooltip.classList.remove("activo"); 
-    // usa la clase que tú utilizas para mostrarlo
   }
 
 });
