@@ -586,6 +586,30 @@ select {
 
 }
 
+/* ===================================== */
+/* HISTORIAL DESPLEGABLE EN PC AL FINAL */
+/* ===================================== */
+
+@media (min-width: 1025px) {
+
+  body.modo-finalizado .panel-historial {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  body.modo-finalizado .panel-historial.active {
+    transform: translateX(0);
+  }
+
+  body.modo-finalizado .cerrar-historial {
+    display: block;
+  }
+
+  body.modo-finalizado .toggle-historial {
+    display: flex;
+  }
+}
+
 
 
 

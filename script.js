@@ -221,6 +221,8 @@ document.getElementById("finalizar").addEventListener("click", () => {
     document.getElementById("postEnvio").style.display = "none";
     document.getElementById("mensajeFinal").style.display = "block";
     document.getElementById("clausulaFinal").style.display = "block";
+
+    document.body.classList.add("modo-finalizado");
   })
   .catch(err => {
     console.error("Error enviando:", err);
