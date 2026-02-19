@@ -611,5 +611,31 @@ select {
 }
 
 
+/* Estilos para las clausulas de politicas */
+.terminos-container {
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
 
+.terminos-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  line-height: 1.5;
+}
 
+.terminos-label input {
+  margin-top: 4px;
+  accent-color: #2dd4bf; /* tu color */
+  cursor: pointer;
+}
+
+.terminos-label a {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.terminos-label a:hover {
+  opacity: 1;
+}

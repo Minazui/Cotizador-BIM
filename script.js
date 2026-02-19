@@ -20,16 +20,25 @@ document.getElementById("btnContinuar").addEventListener("click", () => {
   const email = document.getElementById("clienteEmail").value;
   const telefono = document.getElementById("clienteTelefono").value;
 
+  const acepta = document.getElementById("aceptaTerminos").checked;
+
   if (!nombre || !email) {
     alert("Por favor completa los campos obligatorios.");
     return;
   }
 
+  if (!acepta) {
+    alert("Debes aceptar la política de tratamiento de datos para continuar.");
+    return;
+  }
+
+
   datosCliente = {
     nombre: nombre,
     empresa: empresa,
     email: email,
-    telefono: telefono
+    telefono: telefono,
+    aceptaTerminos: document.getElementById("aceptaTerminos").checked
   };
 
   document.getElementById("formCliente").classList.remove("pantalla-activa");
