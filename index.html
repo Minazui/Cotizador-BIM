@@ -54,17 +54,20 @@
       <input type="text" id="clienteTelefono">
 
       <div class="terminos-container">
-      <label class="terminos-label">
-        <input type="checkbox" id="aceptaTerminos" required>
-        <span>
+        <label class="check-container">
+          <input type="checkbox" id="aceptaTerminos">
+          <span class="checkmark"></span>
+        </label>
+
+        <p class="texto-terminos">
           Acepto la 
-          <a href="politica-datos.html" target="_blank">
+          <span id="abrirPolitica" class="link-politica">
             Política de Tratamiento de Datos
-          </a>
+          </span>
           y autorizo el uso de mi información para fines comerciales y contractuales.
-        </span>
-      </label>
-</div>
+        </p>
+      </div>
+  </div>
 
 
       <button type="button" id="btnContinuar">Continuar</button>
@@ -225,13 +228,19 @@
         <i class="fab fa-whatsapp"></i>
       </a>
     </div>
+  </div>
+      <div id="modalPolitica" class="modal-politica">
+      <div class="contenido-politica">
+        <span id="cerrarPolitica">&times;</span>
+        <h2>Política de Tratamiento de Datos</h2>
+        <p>
+          El estudio de arquitectura N.A.B.E utilizará los datos personales
+          únicamente para fines comerciales y contractuales...
+        </p>
+      </div>
+    </div>
 
   </div>
-
-</div>
-
-
-
   <script src="script.js"></script>
 </body>
 </html>

@@ -501,3 +501,34 @@ document.addEventListener("click", function (e) {
 
 });
 
+// ===============================
+// MODAL POLÍTICA DE DATOS
+// ===============================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const abrirPolitica = document.getElementById("abrirPolitica");
+  const modalPolitica = document.getElementById("modalPolitica");
+  const cerrarPolitica = document.getElementById("cerrarPolitica");
+
+  if (abrirPolitica && modalPolitica && cerrarPolitica) {
+
+    abrirPolitica.addEventListener("click", function (e) {
+      e.preventDefault();
+      modalPolitica.style.display = "flex";
+    });
+
+    cerrarPolitica.addEventListener("click", function () {
+      modalPolitica.style.display = "none";
+    });
+
+    window.addEventListener("click", function (e) {
+      if (e.target === modalPolitica) {
+        modalPolitica.style.display = "none";
+      }
+    });
+
+  }
+
+});
+
