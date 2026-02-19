@@ -613,13 +613,45 @@ select {
 
 /* Estilos para las clausulas de politicas */
 .terminos-container {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.terminos-label {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-top: 20px;
-  font-size: 0.9rem;
-  max-width: 600px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
 }
+
+.terminos-label input {
+  margin-top: 4px;
+  width: 16px;
+  height: 16px;
+  accent-color: #00e0d3;
+}
+
+.terminos-label a {
+  color: #00e0d3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.terminos-label a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .terminos-label {
+    font-size: 0.8rem;
+  }
+}
+
 
 .texto-terminos {
   line-height: 1.5;
