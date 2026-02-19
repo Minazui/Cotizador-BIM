@@ -512,57 +512,80 @@ select {
 }
 
 
-.clausula-final {
-  margin-top: 40px;
-  padding: 25px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+.mensaje-gracias {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
   text-align: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  font-weight: 600;
+}
+
+.clausula-final {
+  margin-top: 10px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .texto-clausula {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  opacity: 0.85;
-  margin-bottom: 25px;
-  text-wrap: balance;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.clausula-final strong {
+  font-weight: 700;
 }
 
 .redes-sociales {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 28px;
-  margin-top: 10px;
+  gap: 35px;
+  margin-top: 15px;
 }
 
 .redes-sociales a {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   color: inherit;
-  text-decoration: none;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .redes-sociales a:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
+  transform: scale(1.15);
 }
 
+
 @media (max-width: 768px) {
+
+  .mensaje-gracias {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
   .clausula-final {
-    padding: 20px 15px;
+    padding: 20px 18px;
+    margin-top: 15px;
+    border-radius: 10px;
   }
 
   .texto-clausula {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
   }
 
   .redes-sociales {
-    gap: 20px;
+    gap: 28px;
   }
+
+  .redes-sociales a {
+    font-size: 2rem;   /* más grandes para dedo */
+  }
+
 }
+
 
 
 
