@@ -606,8 +606,7 @@ select {
   }
 
   body.modo-finalizado .toggle-historial {
-    width: 55px;
-    height: 55px;
+    display: flex;
   }
 }
 
