@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Tratamiento de Datos — N.A.B.E</title>
+  <link rel="icon" type="image/x-icon" href="assets/nabe.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: radial-gradient(circle at top left, #0f2c35, #08191f 70%);
+      color: #c8f5f2;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    /* =============================================
+       CONTENEDOR PRINCIPAL
+    ============================================= */
+    .documento {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(10, 30, 35, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 60px 70px;
+      box-shadow: 0 0 60px rgba(0, 255, 255, 0.05);
+    }
+
+    /* =============================================
+       ENCABEZADO
+    ============================================= */
+    .encabezado {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+    }
+
+    .encabezado .empresa {
+      font-size: 11px;
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #00fff0;
+      margin-bottom: 18px;
+    }
+
+    .encabezado h1 {
+      font-size: 26px;
+      font-weight: normal;
+      line-height: 1.4;
+      color: #e8fffe;
+      margin-bottom: 16px;
+    }
+
+    .encabezado .meta {
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      color: #5a9e96;
+      letter-spacing: 0.5px;
+    }
+
+    .encabezado .meta span {
+      margin: 0 8px;
+      opacity: 0.4;
+    }
+
+    /* =============================================
+       SECCIONES Y TIPOGRAFÍA DEL CUERPO
+    ============================================= */
+    .seccion {
+      margin-bottom: 42px;
+    }
+
+    .seccion h2 {
+      font-size: 11px;
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #00fff0;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    }
+
+    .seccion p {
+      font-size: 15px;
+      line-height: 1.85;
+      color: #a8ddd8;
+      margin-bottom: 14px;
+    }
+
+    .seccion p:last-child {
+      margin-bottom: 0;
+    }
+
+    .seccion ul,
+    .seccion ol {
+      margin-left: 22px;
+      margin-top: 10px;
+      margin-bottom: 14px;
+    }
+
+    .seccion li {
+      font-size: 15px;
+      line-height: 1.85;
+      color: #a8ddd8;
+      margin-bottom: 8px;
+    }
+
+    .seccion strong {
+      color: #d4f5f2;
+      font-weight: 600;
+    }
+
+    /* =============================================
+       NORMA LEGAL — Etiquetas de referencia
+    ============================================= */
+    .norma {
+      display: inline-block;
+      font-size: 10px;
+      font-family: 'Inter', sans-serif;
+      background: rgba(0, 255, 255, 0.08);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 2px 7px;
+      color: #00fff0;
+      letter-spacing: 0.5px;
+      margin-left: 6px;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    /* =============================================
+       BLOQUE DESTACADO (derechos, contacto)
+    ============================================= */
+    .bloque-destacado {
+      background: rgba(0, 255, 255, 0.04);
+      border-left: 3px solid rgba(0, 255, 255, 0.4);
+      border-radius: 0 10px 10px 0;
+      padding: 22px 26px;
+      margin: 20px 0;
+    }
+
+    .bloque-destacado p,
+    .bloque-destacado li {
+      color: #c0eeea;
+    }
+
+    /* =============================================
+       TABLA DE FINALIDADES
+    ============================================= */
+    .tabla-finalidades {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .tabla-finalidades th {
+      text-align: left;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #00fff0;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    }
+
+    .tabla-finalidades td {
+      padding: 12px 14px;
+      color: #a8ddd8;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.06);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .tabla-finalidades tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* =============================================
+       PIE DE DOCUMENTO
+    ============================================= */
+    .pie {
+      margin-top: 55px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(0, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .pie p {
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      color: #4a8a84;
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+
+    .pie a {
+      color: #00fff0;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .pie a:hover {
+      opacity: 0.7;
+    }
+
+    .btn-volver {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 30px;
+      padding: 12px 26px;
+      background: transparent;
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 8px;
+      color: #00fff0;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-volver:hover {
+      background: rgba(0, 255, 255, 0.07);
+      border-color: rgba(0, 255, 255, 0.6);
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+    }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 768px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      .documento {
+        padding: 35px 25px;
+      }
+
+      .encabezado h1 {
+        font-size: 20px;
+      }
+
+      .tabla-finalidades {
+        font-size: 13px;
+      }
+
+      .tabla-finalidades th,
+      .tabla-finalidades td {
+        padding: 9px 10px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="documento">
+
+    <!-- ENCABEZADO -->
+    <div class="encabezado">
+      <p class="empresa">N.A.B.E — Planificación Integral de Proyectos</p>
+      <h1>Política de Tratamiento y Protección<br>de Datos Personales</h1>
+      <p class="meta">
+        Versión 1.0
+        <span>|</span>
+        Vigente desde: [DD/MM/AAAA]
+        <span>|</span>
+        Bogotá D.C., Colombia
+      </p>
+    </div>
+
+
+    <!-- 1. IDENTIFICACIÓN DEL RESPONSABLE -->
+    <div class="seccion">
+      <h2>1. Identificación del responsable del tratamiento</h2>
+      <div class="bloque-destacado">
+        <p>
+          <strong>Razón social:</strong> [Nombre legal completo del estudio o persona natural] — operando bajo la marca N.A.B.E<br>
+          <strong>NIT / C.C.:</strong> [Número de identificación tributaria o cédula]<br>
+          <strong>Domicilio:</strong> [Dirección completa], [Ciudad], Colombia<br>
+          <strong>Correo electrónico:</strong> <a href="mailto:[email]">[email@nabe.com]</a><br>
+          <strong>Teléfono:</strong> [+57 XXX XXX XXXX]<br>
+          <strong>Sitio web:</strong> [www.nabe.com]
+        </p>
+      </div>
+      <p>
+        En cumplimiento de la <strong>Ley 1581 de 2012</strong> y el <strong>Decreto 1377 de 2013</strong>
+        (compilado en el Decreto Único Reglamentario 1074 de 2015), N.A.B.E adopta la presente
+        Política de Tratamiento de Datos Personales, la cual es de obligatorio cumplimiento para
+        todos los procesos internos que involucren datos de personas naturales.
+      </p>
+    </div>
+
+
+    <!-- 2. MARCO LEGAL -->
+    <div class="seccion">
+      <h2>2. Marco legal aplicable</h2>
+      <p>Esta política se fundamenta en las siguientes normas vigentes en la República de Colombia:</p>
+      <ul>
+        <li><strong>Constitución Política de Colombia, Art. 15</strong> — Derecho fundamental al habeas data y a la intimidad.</li>
+        <li><strong>Ley 1266 de 2008</strong> — Disposiciones generales sobre datos financieros y crediticios.</li>
+        <li><strong>Ley 1581 de 2012</strong> — Régimen general de protección de datos personales en Colombia.</li>
+        <li><strong>Decreto 1377 de 2013</strong> — Reglamentación parcial de la Ley 1581, relativa al tratamiento y circulación de datos.</li>
+        <li><strong>Decreto 1074 de 2015</strong> — Decreto Único Reglamentario del Sector Comercio; compila las normas anteriores.</li>
+        <li><strong>Ley 1437 de 2011 (CPACA)</strong> — Régimen de protección en actuaciones administrativas.</li>
+        <li><strong>Circular Externa SIC 002 de 2015</strong> — Instrucciones de la Superintendencia de Industria y Comercio.</li>
+      </ul>
+    </div>
+
+
+    <!-- 3. DEFINICIONES -->
+    <div class="seccion">
+      <h2>3. Definiciones clave <span class="norma">Art. 3 — Ley 1581/2012</span></h2>
+      <ul>
+        <li><strong>Dato personal:</strong> Cualquier información vinculada o que pueda asociarse a una o varias personas naturales determinadas o determinables.</li>
+        <li><strong>Dato sensible:</strong> Aquel que afecta la intimidad del titular o cuyo uso indebido puede generar discriminación: origen racial, orientación sexual, salud, biometría, entre otros.</li>
+        <li><strong>Titular:</strong> Persona natural cuyos datos son objeto de tratamiento.</li>
+        <li><strong>Responsable del tratamiento:</strong> Persona natural o jurídica que decide sobre la base de datos y su tratamiento — en este caso, N.A.B.E.</li>
+        <li><strong>Encargado del tratamiento:</strong> Persona natural o jurídica que realiza el tratamiento por cuenta del responsable.</li>
+        <li><strong>Tratamiento:</strong> Cualquier operación sobre datos personales: recolección, almacenamiento, uso, circulación, supresión, entre otras.</li>
+        <li><strong>Autorización:</strong> Consentimiento previo, expreso e informado del titular para llevar a cabo el tratamiento.</li>
+        <li><strong>Habeas data:</strong> Derecho fundamental que tiene toda persona a conocer, actualizar y rectificar la información que sobre ella conste en bases de datos.</li>
+      </ul>
+    </div>
+
+
+    <!-- 4. DATOS QUE SE RECOPILAN -->
+    <div class="seccion">
+      <h2>4. Datos personales recopilados</h2>
+      <p>N.A.B.E recopila exclusivamente los datos necesarios para cumplir las finalidades descritas en esta política. Los datos recopilados a través del Cotizador de Entidades BIM son:</p>
+      <ul>
+        <li>Nombre completo</li>
+        <li>Nombre o razón social de la empresa (opcional)</li>
+        <li>Dirección de correo electrónico</li>
+        <li>Número de teléfono (opcional)</li>
+        <li>Información técnica ingresada en el formulario de cotización</li>
+      </ul>
+      <p>
+        N.A.B.E <strong>no recopila datos sensibles</strong> en el sentido del artículo 5 de la Ley 1581 de 2012,
+        ni datos de menores de edad.
+      </p>
+    </div>
+
+
+    <!-- 5. FINALIDADES -->
+    <div class="seccion">
+      <h2>5. Finalidades del tratamiento <span class="norma">Art. 13 — Ley 1581/2012</span></h2>
+      <p>Los datos personales serán tratados para las siguientes finalidades:</p>
+
+      <table class="tabla-finalidades">
+        <thead>
+          <tr>
+            <th>Finalidad</th>
+            <th>Base legal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Preparar, enviar y hacer seguimiento a cotizaciones de servicios BIM</td>
+            <td>Autorización del titular / ejecución precontractual</td>
+          </tr>
+          <tr>
+            <td>Gestionar la relación comercial y contractual con clientes</td>
+            <td>Ejecución del contrato</td>
+          </tr>
+          <tr>
+            <td>Enviar comunicaciones relacionadas con los servicios solicitados</td>
+            <td>Autorización del titular</td>
+          </tr>
+          <tr>
+            <td>Cumplir obligaciones legales, contables y tributarias</td>
+            <td>Obligación legal (Ley 1819/2016, Estatuto Tributario)</td>
+          </tr>
+          <tr>
+            <td>Mejorar la calidad del servicio y la experiencia del usuario</td>
+            <td>Interés legítimo del responsable</td>
+          </tr>
+          <tr>
+            <td>Enviar información sobre nuevos servicios, si el titular lo ha autorizado expresamente</td>
+            <td>Autorización expresa del titular</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        N.A.B.E <strong>no venderá, cederá ni comercializará</strong> los datos personales a terceros
+        con fines distintos a los aquí descritos.
+      </p>
+    </div>
+
+
+    <!-- 6. AUTORIZACIÓN -->
+    <div class="seccion">
+      <h2>6. Autorización del titular <span class="norma">Art. 9 — Ley 1581/2012</span></h2>
+      <p>
+        El tratamiento de datos personales requiere la autorización previa, expresa e informada del titular,
+        salvo en los casos expresamente exceptuados por la ley (Art. 10, Ley 1581 de 2012).
+      </p>
+      <p>
+        La autorización se obtiene mediante la aceptación del checkbox dispuesto en el formulario de cotización,
+        que constituye una manifestación inequívoca, libre e informada de conformidad con el
+        Decreto 1377 de 2013.
+      </p>
+      <p>
+        El titular puede revocar su autorización en cualquier momento, sin efectos retroactivos,
+        mediante comunicación dirigida al correo <a href="mailto:[email]">[email@nabe.com]</a>.
+      </p>
+    </div>
+
+
+    <!-- 7. DERECHOS DEL TITULAR -->
+    <div class="seccion">
+      <h2>7. Derechos del titular <span class="norma">Art. 8 — Ley 1581/2012</span></h2>
+      <p>Como titular de datos personales, usted tiene los siguientes derechos, que puede ejercer de forma gratuita:</p>
+      <div class="bloque-destacado">
+        <ul>
+          <li><strong>Conocer</strong> los datos personales que N.A.B.E tiene sobre usted.</li>
+          <li><strong>Actualizar</strong> sus datos cuando sean inexactos, incompletos o fragmentarios.</li>
+          <li><strong>Rectificar</strong> datos que no correspondan a la realidad.</li>
+          <li><strong>Oponerse</strong> al tratamiento de sus datos para finalidades específicas.</li>
+          <li><strong>Solicitar prueba</strong> de la autorización otorgada.</li>
+          <li><strong>Revocar</strong> la autorización y/o solicitar la supresión de sus datos, salvo que exista obligación legal de conservarlos.</li>
+          <li><strong>Acceder gratuitamente</strong> a sus datos personales al menos una vez al mes.</li>
+          <li><strong>Presentar quejas</strong> ante la Superintendencia de Industria y Comercio (SIC) por infracciones a la ley.</li>
+        </ul>
+      </div>
+      <p>
+        Para ejercer sus derechos, diríjase a:
+        <strong><a href="mailto:[email]">[email@nabe.com]</a></strong>.
+        N.A.B.E dará respuesta dentro de los plazos establecidos por la ley:
+        <strong>10 días hábiles para consultas</strong> y <strong>15 días hábiles para reclamos</strong>
+        (prorrogables según el Art. 14 y 15 de la Ley 1581 de 2012).
+      </p>
+    </div>
+
+
+    <!-- 8. SEGURIDAD Y CONSERVACIÓN -->
+    <div class="seccion">
+      <h2>8. Seguridad y conservación de los datos</h2>
+      <p>
+        N.A.B.E adoptará las medidas técnicas, humanas y administrativas necesarias para garantizar
+        la seguridad de los datos personales y evitar su adulteración, pérdida, consulta, uso o
+        acceso no autorizado, de conformidad con el artículo 17 de la Ley 1581 de 2012.
+      </p>
+      <p>
+        Los datos serán conservados por el tiempo necesario para cumplir las finalidades del tratamiento
+        y las obligaciones legales aplicables. Una vez cumplido el fin o vencido el plazo legal,
+        los datos serán suprimidos de forma segura.
+      </p>
+      <p>
+        Los datos de cotización se transmiten a través de Google Workspace (Google LLC), con quien
+        se mantiene una relación de encargado del tratamiento bajo las condiciones de privacidad de dicha plataforma,
+        que incluye medidas de seguridad certificadas internacionalmente.
+      </p>
+    </div>
+
+
+    <!-- 9. TRANSFERENCIA A TERCEROS -->
+    <div class="seccion">
+      <h2>9. Transferencia y transmisión de datos <span class="norma">Art. 26 — Ley 1581/2012</span></h2>
+      <p>
+        N.A.B.E podrá transmitir datos personales a encargados del tratamiento (proveedores de servicios
+        tecnológicos, plataformas de almacenamiento en la nube) únicamente bajo contratos que
+        garanticen el mismo nivel de protección exigido por la legislación colombiana.
+      </p>
+      <p>
+        No se realizarán transferencias internacionales de datos a países que no cuenten con niveles
+        adecuados de protección, salvo que el titular haya otorgado autorización expresa o se
+        configure alguna de las excepciones del artículo 26 de la Ley 1581 de 2012.
+      </p>
+    </div>
+
+
+    <!-- 10. COOKIES Y TECNOLOGÍAS SIMILARES -->
+    <div class="seccion">
+      <h2>10. Cookies y tecnologías de seguimiento</h2>
+      <p>
+        El presente cotizador no utiliza cookies de seguimiento ni tecnologías de rastreo de terceros,
+        a excepción del servicio reCAPTCHA de Google, empleado para prevenir el uso automatizado
+        (bots) del formulario. Este servicio está sujeto a la
+        <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a>.
+      </p>
+    </div>
+
+
+    <!-- 11. MODIFICACIONES A LA POLÍTICA -->
+    <div class="seccion">
+      <h2>11. Modificaciones a la política</h2>
+      <p>
+        N.A.B.E se reserva el derecho de modificar la presente política en cualquier momento.
+        Cualquier cambio sustancial será comunicado a los titulares registrados con al menos
+        <strong>10 días hábiles de anticipación</strong> a su entrada en vigor, mediante el correo
+        electrónico suministrado o a través del sitio web.
+      </p>
+      <p>
+        La versión vigente siempre estará disponible en esta página. La continuación del uso
+        de los servicios de N.A.B.E con posterioridad a la notificación de cambios implicará
+        la aceptación de los mismos.
+      </p>
+    </div>
+
+
+    <!-- 12. AUTORIDAD DE CONTROL -->
+    <div class="seccion">
+      <h2>12. Autoridad de control y vigilancia</h2>
+      <p>
+        La entidad competente para conocer consultas y reclamos relacionados con el tratamiento
+        de datos personales en Colombia es la
+        <strong>Superintendencia de Industria y Comercio (SIC)</strong>:
+      </p>
+      <div class="bloque-destacado">
+        <p>
+          Carrera 13 # 27-00, Bogotá D.C., Colombia<br>
+          Línea gratuita: 01 8000 910165<br>
+          Sitio web: <a href="https://www.sic.gov.co" target="_blank">www.sic.gov.co</a>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 13. CONTACTO -->
+    <div class="seccion">
+      <h2>13. Canal de atención al titular</h2>
+      <p>Para consultas, reclamos, solicitudes de actualización, corrección, supresión o revocación de datos:</p>
+      <div class="bloque-destacado">
+        <p>
+          <strong>Correo electrónico:</strong> <a href="mailto:[email]">[email@nabe.com]</a><br>
+          <strong>Asunto:</strong> "Solicitud Habeas Data — [su nombre]"<br>
+          <strong>Tiempo de respuesta:</strong> 10 días hábiles para consultas / 15 días hábiles para reclamos<br>
+          <strong>Horario de atención:</strong> Lunes a viernes, 8:00 a.m. – 6:00 p.m. (hora Colombia)
+        </p>
+      </div>
+    </div>
+
+
+    <!-- PIE -->
+    <div class="pie">
+      <p>© [Año] N.A.B.E — Todos los derechos reservados.</p>
+      <p>Esta política fue elaborada en cumplimiento de la Ley 1581 de 2012 y el Decreto 1377 de 2013.</p>
+      <a href="javascript:window.close()" class="btn-volver">
+        <i class="fas fa-arrow-left"></i> Volver al cotizador
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>

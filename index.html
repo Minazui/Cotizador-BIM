@@ -4,20 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cotizador de Entidades BIM</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/x-icon" href="assets/nabe.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="theme-color" content="#2f5d4a">
+  <link rel="icon" type="image/x-icon" href="assets/nabe.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Boton flotante para abrir historial en celular -->
+
+  <!-- =============================================
+       BOTÓN FLOTANTE — Abre historial en móvil
+  ============================================== -->
   <button id="toggleHistorial" class="toggle-historial" aria-label="Ver historial">
     <span class="historial-count" id="contadorHistorial">0</span>
     📋
   </button>
 
-  <!-- Panel de Historial -->
+
+  <!-- =============================================
+       OVERLAY — Cierra el panel al clic afuera
+  ============================================== -->
+  <div id="overlay" class="overlay"></div>
+
+
+  <!-- =============================================
+       PANEL HISTORIAL — Lateral derecho
+  ============================================== -->
   <div id="panelHistorial" class="panel-historial">
     <div class="panel-header">
       <h3>Historial</h3>
@@ -29,11 +41,22 @@
     </div>
   </div>
 
-  <!-- Overlay para cerrar el panel al hacer clic fuera -->
-  <div id="overlay" class="overlay"></div>
 
+  <!-- =============================================
+       PANEL TOOLTIP — Lateral izquierdo de ayuda
+  ============================================== -->
+  <div id="panelTooltip" class="panel-tooltip">
+    <button id="cerrarTooltip" aria-label="Cerrar tooltip">✕</button>
+    <div id="contenidoTooltip"></div>
+  </div>
+
+
+  <!-- =============================================
+       PANTALLA 1 — Datos del cliente
+  ============================================== -->
   <div id="formCliente" class="pantalla pantalla-activa">
     <form id="clienteForm" class="form-cliente">
+
       <div class="titulo-con-logo">
         <img src="assets/nabe.png" alt="Logo Nabe" class="logo-titulo">
         <h1>Cotizador de Creación de Entidades Nabe</h1>
@@ -52,55 +75,49 @@
 
       <label>Teléfono</label>
       <input type="text" id="clienteTelefono">
+
       <div class="terminos-container">
         <label class="terminos-label">
           <input type="checkbox" id="aceptaTerminos">
           <span>
-            Acepto la 
-            <a href="politica.html" target="_blank">
-              Política de Tratamiento de Datos
-            </a>
+            Acepto la
+            <a href="politica.html" target="_blank">Política de Tratamiento de Datos</a>
             y autorizo el uso de mi información para fines comerciales y contractuales.
           </span>
         </label>
       </div>
-  </div>
-
 
       <button type="button" id="btnContinuar">Continuar</button>
+
     </form>
   </div>
 
-  <div id="panelTooltip" class="panel-tooltip">
-    <button id="cerrarTooltip" aria-label="Cerrar tooltip">✕</button>
-    <div id="contenidoTooltip"></div>
-  </div>
 
+  <!-- =============================================
+       PANTALLA 2 — Formulario técnico / cotizador
+  ============================================== -->
   <div id="formTecnico" class="pantalla">
-
     <form id="cotizadorForm">
+
       <h1>Cotizador de Creación de Entidades</h1>
       <p>Complete el formulario para cotizar entidades BIM.</p>
 
-      <!-- P1 -->
-      <label>
-        1. Identificador de la entidad *
-      </label>
+      <!-- P1: Identificador -->
+      <label>1. Identificador de la entidad *</label>
       <input type="text" name="identificador" required>
 
-      <!-- P2 -->
+      <!-- P2: Software -->
       <label>
         2. ¿La entidad es nativa de Revit?
         <span class="icono-info" data-tooltip="software">ⓘ</span>
       </label>
-
       <select name="software" id="software" required>
         <option value="">Seleccione</option>
         <option value="nativo">Entidad nativa de Revit</option>
         <option value="externo">Necesita software externo</option>
       </select>
 
-      <!-- P3 -->
+      <!-- P3: Paramétrica -->
       <label>
         3. ¿La entidad debe ser paramétrica?
         <span class="icono-info" data-tooltip="parametrica">ⓘ</span>
@@ -111,7 +128,7 @@
         <option value="compleja">Parámetros complejos</option>
       </select>
 
-      <!-- P4 -->
+      <!-- P4: Categoría -->
       <label>
         4. Categoría
         <span class="icono-info" data-tooltip="categoria">ⓘ</span>
@@ -127,7 +144,7 @@
         <option>General</option>
       </select>
 
-      <!-- P5 -->
+      <!-- P5: LOD -->
       <label>
         5. Nivel de detalle (LOD)
         <span class="icono-info" data-tooltip="lod">ⓘ</span>
@@ -139,7 +156,7 @@
         <option>LOD 400</option>
       </select>
 
-      <!-- P6 -->
+      <!-- P6: Simbología 2D -->
       <label>
         6. ¿Requiere simbología 2D adicional?
         <span class="icono-info" data-tooltip="simbologia">ⓘ</span>
@@ -149,7 +166,7 @@
         <option>Sí</option>
       </select>
 
-      <!-- P7 -->
+      <!-- P7: MEP -->
       <label>
         7. ¿Tiene conexiones MEP?
         <span class="icono-info" data-tooltip="mep">ⓘ</span>
@@ -159,7 +176,7 @@
         <option>Sí</option>
       </select>
 
-      <!-- P8 -->
+      <!-- P8: Tipos -->
       <label>
         8. ¿Requiere configuración de tipos?
         <span class="icono-info" data-tooltip="tipos">ⓘ</span>
@@ -169,24 +186,31 @@
         <option>Sí</option>
       </select>
 
-      <!-- P9 -->
+      <!-- P9: Cantidad -->
       <label>
         9. Cantidad de entidades
         <span class="icono-info" data-tooltip="cantidad">ⓘ</span>
       </label>
       <input type="number" name="cantidad" min="1" value="1">
 
+      <!-- Total -->
       <label>Total estimado</label>
       <input type="text" id="totalCotizacion" readonly>
 
       <button type="submit">Agregar Producto</button>
+
     </form>
   </div>
 
 
+  <!-- =============================================
+       PANTALLA 3 — Post envío (agregar / finalizar)
+  ============================================== -->
   <div id="postEnvio" style="display:none; text-align:center;">
+
     <h2>Cotización enviada</h2>
     <p>¿Deseas agregar otra entidad o finalizar?</p>
+
     <div class="g-recaptcha" data-sitekey="6LecS3AsAAAAAJdUnZTzPWdzm3168mrblJDAJHyS"></div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
@@ -194,50 +218,45 @@
       <button type="button" id="otraEntidad">Agregar otra entidad</button>
       <button type="button" id="finalizar">Finalizar</button>
     </div>
+
     <div id="historialMovil" class="historial-movil"></div>
 
   </div>
 
+
+  <!-- =============================================
+       PANTALLA 4 — Mensaje final y cláusula
+  ============================================== -->
   <div id="mensajeFinal" style="display:none;">
 
-  <h2 class="mensaje-gracias">
-    Gracias por confiar en nosotros.
-  </h2>
+    <h2 class="mensaje-gracias">Gracias por confiar en nosotros.</h2>
 
-  <div id="clausulaFinal" class="clausula-final">
+    <div id="clausulaFinal" class="clausula-final">
+      <p class="texto-clausula">
+        Esta cotización tiene una vigencia de
+        <strong>15 días calendario</strong> a partir de la fecha de emisión.
+        Pasado este plazo, los valores podrán ajustarse según el alcance definitivo del proyecto.
+      </p>
 
-    <p class="texto-clausula">
-      Esta cotización tiene una vigencia de 
-      <strong>15 días calendario</strong> a partir de la fecha de emisión. 
-      Pasado este plazo, los valores podrán ajustarse según el alcance definitivo del proyecto.
-    </p>
-
-    <div class="redes-sociales">
-      <a href="https://instagram.com/TU_USUARIO" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <a href="https://twitter.com/TU_USUARIO" target="_blank">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-
-      <a href="https://wa.me/57XXXXXXXXXX" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
+      <div class="redes-sociales">
+        <a href="https://instagram.com/nabeproyectos" target="_blank"><i class="fab fa-instagram"></i></a>
+        <!--<a href="https://twitter.com/TU_USUARIO" target="_blank"><i class="fab fa-x-twitter"></i></a>-->
+        <a href="https://wa.me/573128505090" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
     </div>
-  </div>
-      <div id="modalPolitica" class="modal-politica">
+
+    <!-- Modal Política de Datos -->
+    <div id="modalPolitica" class="modal-politica">
       <div class="contenido-politica">
         <span id="cerrarPolitica">&times;</span>
         <h2>Política de Tratamiento de Datos</h2>
-        <p>
-          El estudio de arquitectura N.A.B.E utilizará los datos personales
-          únicamente para fines comerciales y contractuales...
-        </p>
+        <p>El estudio de arquitectura N.A.B.E utilizará los datos personales únicamente para fines comerciales y contractuales...</p>
       </div>
     </div>
 
   </div>
+
+
   <script src="script.js"></script>
 </body>
 </html>
