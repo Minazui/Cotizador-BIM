@@ -513,32 +513,56 @@ select {
 
 
 .clausula-final {
-  margin-top: 30px;
-  padding: 20px;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 40px;
+  padding: 25px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .texto-clausula {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
   opacity: 0.85;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  text-wrap: balance;
 }
 
 .redes-sociales {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 28px;
+  margin-top: 10px;
 }
 
 .redes-sociales a {
-  font-size: 1.4rem;
-  color: #20e3d8;
-  transition: 0.2s ease;
+  font-size: 1.6rem;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .redes-sociales a:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
+  opacity: 0.8;
 }
+
+@media (max-width: 768px) {
+  .clausula-final {
+    padding: 20px 15px;
+  }
+
+  .texto-clausula {
+    font-size: 0.85rem;
+  }
+
+  .redes-sociales {
+    gap: 20px;
+  }
+}
+
 
 
