@@ -1,8 +1,8 @@
-/* =============================================
+/*
    COTIZADOR NABE — styles.css
    Organización:
-   1.  Reset & Base
-   2.  Tipografía y colores globales
+   1.  Reset y Base
+   2.  Tipografia y colores globales
    3.  Layout principal
    4.  Formularios (inputs, selects, labels)
    5.  Botones
@@ -373,7 +373,7 @@ button:hover {
 
 .panel-tooltip p {
   margin-bottom: 10px;
-  font-size: 13px;
+  font-size: 15px;
   color: #bffcf7;
 }
 
@@ -423,6 +423,12 @@ button:hover {
 /* =============================================
    10. POST ENVÍO E HISTORIAL MÓVIL
 ============================================= */
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+
 .historial-movil {
   display: none;
   margin-top: 25px;
